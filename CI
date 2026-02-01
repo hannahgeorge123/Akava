@@ -1,0 +1,51 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ─────────────────────────────────────────────
+      # Set up runtime (edit as needed)
+      # Examples:
+      # - Node: actions/setup-node
+      # - Python: actions/setup-python
+      # - Java: actions/setup-java
+      # ─────────────────────────────────────────────
+      - name: Set up runtime
+        run: echo "Set up your language runtime here"
+
+      # ─────────────────────────────────────────────
+      # Install dependencies
+      # ─────────────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          echo "Install dependencies here"
+          # e.g. npm ci
+          # e.g. pip install -r requirements.txt
+
+      # ─────────────────────────────────────────────
+      # Lint
+      # ─────────────────────────────────────────────
+      - name: Run linter
+        run: |
+          echo "Run linter here"
+          # e.g. npm run lint
+          # e.g. ruff check .
+
+      # ─────────────────────────────────────────────
+      # Tests
+      # ─────────────────────────────────────────────
+      - name: Run tests
+        run: |
+          echo "Run tests here"
+          # e.g. npm test
+          # e.g. pytest
