@@ -1,0 +1,12 @@
+.git
+node_modules
+__pycache__
+.env
+dist
+build .
+├── .devcontainer/
+│   ├── devcontainer.json
+│   └── docker-compose.yml
+├── Dockerfile
+├── .dockerignore
+└── src/...
