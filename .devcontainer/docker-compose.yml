@@ -3,11 +3,11 @@ version: "3.9"
 services:
   app:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     container_name: dev-env
     volumes:
-      - .:/app
+      - ../:/app
     working_dir: /app
     tty: true
     stdin_open: true
