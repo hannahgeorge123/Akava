@@ -3,10 +3,13 @@ version: "3.9"
 services:
   app:
     build:
+      context: ..            # CHANGED: Sets context to project root
+      dockerfile: Dockerfile # Looks for Dockerfile in the root
       context: ..
       dockerfile: Dockerfile
     container_name: dev-env
     volumes:
+      - ../:/app             # CHANGED: Mounts the project root, not just .devcontainer
       - ../:/app
     working_dir: /app
     tty: true
@@ -14,4 +17,4 @@ services:
     environment:
       - ENV=development
     ports:
-      - "3000:3000"   # change/remove as needed
+      - "3000:3000"
